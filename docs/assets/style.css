@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #f9f9f9;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.para {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  background: white;
+  margin-bottom: 10px;
+}
+
+.para h3 {
+  cursor: pointer;
+  margin: 0;
+  font-size: 18px;
+}
+
+.explanation {
+  color: #555;
+  font-style: italic;
+  margin-top: 5px;
+}
