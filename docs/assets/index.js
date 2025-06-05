@@ -1,5 +1,6 @@
 const container = document.getElementById('results');
 const input = document.getElementById('search');
+console.log('Loaded oecdData:', typeof oecdData !== 'undefined' ? oecdData : 'NOT FOUND');
 
 function renderParagraphs(data) {
   container.innerHTML = '';
