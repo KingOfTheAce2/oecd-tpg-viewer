@@ -1,28 +1,20 @@
 const oecdData = [
   {
+    id: "1.43",
+    title: "Arm’s length principle - overview",
+    text: "The arm’s length principle requires that transfer prices between associated enterprises be consistent with those which would be agreed between independent enterprises.",
+    explanation: "This paragraph introduces the arm’s length principle and lays the foundation for Chapter I."
+  },
+  {
+    id: "1.44",
+    title: "Comparability analysis",
+    text: "To apply the arm’s length principle, it is necessary to compare the conditions of controlled transactions with those of uncontrolled transactions.",
+    explanation: "This paragraph is key for establishing comparable data and setting up functional analysis."
+  },
+  {
     id: "10.19",
     title: "ORA's in financial transactions",
     text: "Independent enterprises, when considering whether to enter into a particular financial transaction, will consider all other options realistically available to them, and will only enter into the transaction if they see no alternative that offers a clearly more attractive opportunity to meet their commercial objectives (see paragraph 1.38 of Chapter I). In considering the options realistically available, the perspective of each of the parties to the transaction must be considered. For instance, in the case of an entity that advances funds, other investment opportunities may be contemplated, taking account of the specific business objectives of the lender and the context in which the transaction takes place. From the borrower’s perspective, the options realistically available will include broader considerations than the entity’s ability to service its debt, for example, the funds it actually needs to meet its operational requirements. In some instances, although an entity may have the capacity to borrow and service an additional amount of debt, it may choose not to do so to avoid placing negative pressure on its credit rating and increasing its cost of capital, and jeopardising its access to capital markets and its market reputation (see comments upon “The lender’s and borrower’s perspectives” in Section C.1.1.1 of this chapter).",
-    explanation: "The ATO’s view, as outlined in Draft Practical Compliance Guideline PCG 2025/D2, aligns with the principle in paragraph 10.19 of Chapter X of the OECD Transfer Pricing Guidelines 2022. Specifically, when assessing whether the terms of a cross-border related party financial arrangement reflect arm’s length conditions under Australia’s transfer pricing rules, the ATO expects taxpayers to evaluate all options that would have been realistically available to independent parties in similar circumstances.
-
-Paragraph 10.19 reinforces this requirement. It emphasises that independent entities entering a financial transaction would only do so after confirming no clearly better alternative exists to meet their commercial objectives. The ATO interprets this to mean that both the borrower and lender must assess alternatives from their respective commercial perspectives—not just whether a borrower can technically repay a loan, but whether taking on that debt is the most commercially viable decision.
-
-From the lender’s side, the ATO expects consideration of alternative investments based on its business context. From the borrower’s side, the assessment must go beyond serviceability to include factors like actual funding needs, internal cash availability, cost of capital, and the effect of additional debt on credit ratings and future market access.
-
-The ATO gives specific examples in PCG 2025/D2 where failure to consider options realistically available raises transfer pricing risk—such as when significant cash reserves are held while incurring related party debt, or when debt is taken on that would not have been available on a standalone basis without group guarantees.
-
-Therefore, in line with paragraph 10.19 and as clarified by the ATO, if a taxpayer does not document a genuine assessment of all reasonably available options (e.g. using internal funds, equity, third-party debt), and instead defaults to related party funding, there is a higher likelihood that the transaction may not be considered arm’s length.
-
-This is not simply a theoretical expectation. The ATO will scrutinise whether:
-
-Related party debt was necessary in light of other funding sources
-
-The amount of debt was justifiable based on actual funding requirements
-
-Debt issuance considered credit implications and commercial strategy
-
-The perspectives of both borrower and lender were appropriately weighed
-
-In short, the ATO expects substance over form. Any financing arrangement must be justifiable based on a realistic appraisal of what independent parties would have done, and this appraisal must be reflected in contemporary documentation."
-  },
+    explanation: "The ATO’s view, as outlined in Draft Practical Compliance Guideline PCG 2025/D2, aligns with the principle in paragraph 10.19 of Chapter X of the OECD Transfer Pricing Guidelines 2022. Specifically, when assessing whether the terms of a cross-border related party financial arrangement reflect arm’s length conditions under Australia’s transfer pricing rules, the ATO expects taxpayers to evaluate all options that would have been realistically available to independent parties in similar circumstances.\n\nParagraph 10.19 reinforces this requirement. It emphasises that independent entities entering a financial transaction would only do so after confirming no clearly better alternative exists to meet their commercial objectives. The ATO interprets this to mean that both the borrower and lender must assess alternatives from their respective commercial perspectives—not just whether a borrower can technically repay a loan, but whether taking on that debt is the most commercially viable decision.\n\nFrom the lender’s side, the ATO expects consideration of alternative investments based on its business context. From the borrower’s side, the assessment must go beyond serviceability to include factors like actual funding needs, internal cash availability, cost of capital, and the effect of additional debt on credit ratings and future market access.\n\nThe ATO gives specific examples in PCG 2025/D2 where failure to consider options realistically available raises transfer pricing risk—such as when significant cash reserves are held while incurring related party debt, or when debt is taken on that would not have been available on a standalone basis without group guarantees.\n\nTherefore, in line with paragraph 10.19 and as clarified by the ATO, if a taxpayer does not document a genuine assessment of all reasonably available options (e.g. using internal funds, equity, third-party debt), and instead defaults to related party funding, there is a higher likelihood that the transaction may not be considered arm’s length.\n\nThis is not simply a theoretical expectation. The ATO will scrutinise whether:\n\n- Related party debt was necessary in light of other funding sources\n- The amount of debt was justifiable based on actual funding requirements\n- Debt issuance considered credit implications and commercial strategy\n- The perspectives of both borrower and lender were appropriately weighed\n\nIn short, the ATO expects substance over form. Any financing arrangement must be justifiable based on a realistic appraisal of what independent parties would have done, and this appraisal must be reflected in contemporary documentation."
+  }
 ];
