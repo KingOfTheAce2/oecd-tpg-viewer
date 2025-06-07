@@ -49,7 +49,7 @@ function NACECodeFinder() {
 
   return (
     React.createElement('div', { style: { padding: '20px', maxWidth: '600px', margin: '0 auto' } },
-      React.createElement('h1', { style: { fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center' } }, 'NACE Code Finder'),
+      React.createElement('h1', { style: { fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center' } }, 'NACE Rev. 2.1 Code Finder'),
       React.createElement('div', { style: { marginBottom: '16px' } },
         React.createElement('h3', null, 'Primary Search'),
         React.createElement('input', { type: 'text', placeholder: 'Primary Search...', value: searchQuery, onChange: (e) => setSearchQuery(e.target.value), style: { width: '100%', padding: '10px', marginBottom: '8px' } }),
