@@ -12,11 +12,26 @@
       <a class="app-link" href="index.html">Home</a>
     </div>
     <h1 style="text-align:center;">OECD TPG Viewer</h1>
+    <div style="margin-bottom:10px;">
+      <label for="language">Language:</label>
+      <select id="language">
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="fr">French</option>
+        <option value="de">German</option>
+        <option value="ja">Japanese</option>
+        <option value="sl">Slovenian</option>
+      </select>
+      <label for="chapter">Chapter:</label>
+      <select id="chapter">
+        <option value="1">1</option>
+        <option value="10">10</option>
+      </select>
+    </div>
     <input type="text" id="search" placeholder="Search paragraphs..." />
     <div id="results"></div>
   </div>
 
-  <script src="assets/OECD-TPG-EN-2022.js"></script>
-  <script src="assets/index.js"></script>
+  <script src="assets/oecd/index.js"></script>
 </body>
 </html>
