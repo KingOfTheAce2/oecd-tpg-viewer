@@ -27,43 +27,45 @@ function NACECodeFinder() {
 
   useEffect(() => { loadData(); }, []);
 
-  // Function to format text with bullet points and line breaks
+  // Format text with bullet points and line breaks using lists
   const formatText = (text) => {
     if (!text) return null;
-    
+
     const lines = text.split('\n');
-    const elements = [];
-    
-    lines.forEach((line, index) => {
-      if (line.trim() === '') return; // Skip empty lines
-      
-      const trimmedLine = line.trim();
-      
-      // Check if it's a bullet point line
-      if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
-        elements.push(
-          React.createElement('div', { 
-            key: index, 
-            style: { 
-              marginLeft: '20px', 
-              marginBottom: '2px',
-              display: 'flex',
-              alignItems: 'flex-start'
-            } 
-          },
-            React.createElement('span', { style: { marginRight: '8px', fontWeight: 'bold' } }, '•'),
-            React.createElement('span', null, trimmedLine.replace(/^[•-]\s*/, ''))
+    let listItems = [];
+    const parts = [];
+
+    const flushList = () => {
+      if (listItems.length > 0) {
+        parts.push(
+          React.createElement(
+            'ul',
+            { style: { marginLeft: '20px', marginBottom: '4px' } },
+            listItems.map((li, idx) =>
+              React.createElement('li', { key: `li-${idx}` }, li)
+            )
           )
         );
+        listItems = [];
+      }
+    };
+
+    lines.forEach((line, index) => {
+      const trimmed = line.trim();
+      if (!trimmed) return;
+
+      if (trimmed.startsWith('•') || trimmed.startsWith('-')) {
+        listItems.push(trimmed.replace(/^[•-]\s*/, ''));
       } else {
-        // Regular line
-        elements.push(
-          React.createElement('div', { key: index, style: { marginBottom: '4px' } }, trimmedLine)
+        flushList();
+        parts.push(
+          React.createElement('div', { key: `p-${index}`, style: { marginBottom: '4px' } }, trimmed)
         );
       }
     });
-    
-    return React.createElement('div', null, ...elements);
+
+    flushList();
+    return React.createElement('div', null, ...parts);
   };
 
   const handleSearch = () => {
@@ -88,10 +90,10 @@ function NACECodeFinder() {
 
   return (
     React.createElement('div', { style: { padding: '20px', maxWidth: '800px', margin: '0 auto' } },
-      React.createElement('h1', { style: { fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center' } }, 'NACE Code Finder'),
+      React.createElement('h1', { style: { fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center' } }, 'NACE Rev. 2.1 Code Finder'),
       React.createElement('div', { style: { marginBottom: '16px' } },
         React.createElement('h3', null, 'Primary Search'),
-        React.createElement('input', { type: 'text', placeholder: 'Primary Search...', value: searchQuery, onChange: (e) => setSearchQuery(e.target.value), style: { width: '100%', padding: '10px', marginBottom: '8px' } }),
+        React.createElement('input', { type: 'text', placeholder: 'Primary Search...', value: searchQuery, onChange: (e) => setSearchQuery(e.target.value), onKeyDown: (e) => { if (e.key === 'Enter') handleSearch(); }, style: { width: '100%', padding: '10px', marginBottom: '8px' } }),
         React.createElement('select', { value: searchField, onChange: (e) => setSearchField(e.target.value), style: { width: '100%', padding: '10px' } },
           React.createElement('option', { value: 'all' }, 'All Fields'),
           React.createElement('option', { value: 'CODE' }, 'Code'),
@@ -103,7 +105,7 @@ function NACECodeFinder() {
       ),
       React.createElement('div', { style: { marginBottom: '16px' } },
         React.createElement('h3', null, 'Secondary Search (Optional)'),
-        React.createElement('input', { type: 'text', placeholder: 'Secondary Search...', value: secondaryQuery, onChange: (e) => setSecondaryQuery(e.target.value), style: { width: '100%', padding: '10px', marginBottom: '8px' } }),
+        React.createElement('input', { type: 'text', placeholder: 'Secondary Search...', value: secondaryQuery, onChange: (e) => setSecondaryQuery(e.target.value), onKeyDown: (e) => { if (e.key === 'Enter') handleSearch(); }, style: { width: '100%', padding: '10px', marginBottom: '8px' } }),
         React.createElement('select', { value: secondaryField, onChange: (e) => setSecondaryField(e.target.value), style: { width: '100%', padding: '10px' } },
           React.createElement('option', { value: 'all' }, 'All Fields'),
           React.createElement('option', { value: 'CODE' }, 'Code'),
