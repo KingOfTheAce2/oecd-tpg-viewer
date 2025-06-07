@@ -27,6 +27,45 @@ function NACECodeFinder() {
 
   useEffect(() => { loadData(); }, []);
 
+  // Function to format text with bullet points and line breaks
+  const formatText = (text) => {
+    if (!text) return null;
+    
+    const lines = text.split('\n');
+    const elements = [];
+    
+    lines.forEach((line, index) => {
+      if (line.trim() === '') return; // Skip empty lines
+      
+      const trimmedLine = line.trim();
+      
+      // Check if it's a bullet point line
+      if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
+        elements.push(
+          React.createElement('div', { 
+            key: index, 
+            style: { 
+              marginLeft: '20px', 
+              marginBottom: '2px',
+              display: 'flex',
+              alignItems: 'flex-start'
+            } 
+          },
+            React.createElement('span', { style: { marginRight: '8px', fontWeight: 'bold' } }, '•'),
+            React.createElement('span', null, trimmedLine.replace(/^[•-]\s*/, ''))
+          )
+        );
+      } else {
+        // Regular line
+        elements.push(
+          React.createElement('div', { key: index, style: { marginBottom: '4px' } }, trimmedLine)
+        );
+      }
+    });
+    
+    return React.createElement('div', null, ...elements);
+  };
+
   const handleSearch = () => {
     const filtered = data.filter((item) => {
       const primaryMatch = searchField === 'all' || (item[searchField] && item[searchField].toString().toLowerCase().includes(searchQuery.toLowerCase()));
@@ -48,8 +87,8 @@ function NACECodeFinder() {
   if (error) return React.createElement('div', { style: { padding: '20px', textAlign: 'center' } }, error);
 
   return (
-    React.createElement('div', { style: { padding: '20px', maxWidth: '600px', margin: '0 auto' } },
-      React.createElement('h1', { style: { fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center' } }, 'NACE Rev. 2.1 Code Finder'),
+    React.createElement('div', { style: { padding: '20px', maxWidth: '800px', margin: '0 auto' } },
+      React.createElement('h1', { style: { fontSize: '24px', fontWeight: 'bold', marginBottom: '16px', textAlign: 'center' } }, 'NACE Code Finder'),
       React.createElement('div', { style: { marginBottom: '16px' } },
         React.createElement('h3', null, 'Primary Search'),
         React.createElement('input', { type: 'text', placeholder: 'Primary Search...', value: searchQuery, onChange: (e) => setSearchQuery(e.target.value), style: { width: '100%', padding: '10px', marginBottom: '8px' } }),
@@ -80,15 +119,30 @@ function NACECodeFinder() {
       ),
       filteredData.length > 0 ? (
         filteredData.map((item, idx) => (
-          React.createElement('div', { key: idx, style: { marginBottom: '12px', padding: '12px', backgroundColor: '#f9f9f9', border: '1px solid #ddd', borderRadius: '4px' } },
-            React.createElement('p', null, React.createElement('strong', null, 'Code:'), ' ', item.CODE.toString()),
-            React.createElement('p', null, React.createElement('strong', null, 'Name:'), ' ', item.NAME),
-            React.createElement('p', null, React.createElement('strong', null, 'Includes:'), ' ', item.Includes),
-            item.IncludesAlso ? React.createElement('p', null, React.createElement('strong', null, 'Includes Also:'), ' ', item.IncludesAlso) : null,
-            item.Excludes ? React.createElement('p', null, React.createElement('strong', null, 'Excludes:'), ' ', item.Excludes) : null
+          React.createElement('div', { key: idx, style: { marginBottom: '16px', padding: '16px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px', boxShadow: '0 2px 4px rgba(0,0,0,0.1)' } },
+            React.createElement('div', { style: { marginBottom: '12px' } },
+              React.createElement('strong', { style: { fontSize: '16px', color: '#333' } }, 'Code: '),
+              React.createElement('span', { style: { fontSize: '16px', fontWeight: 'bold', color: '#007bff' } }, item.CODE.toString())
+            ),
+            React.createElement('div', { style: { marginBottom: '12px' } },
+              React.createElement('strong', { style: { fontSize: '16px', color: '#333' } }, 'Name: '),
+              React.createElement('span', { style: { fontSize: '16px' } }, item.NAME)
+            ),
+            React.createElement('div', { style: { marginBottom: '12px' } },
+              React.createElement('strong', { style: { fontSize: '16px', color: '#333', display: 'block', marginBottom: '4px' } }, 'Includes:'),
+              formatText(item.Includes)
+            ),
+            item.IncludesAlso ? React.createElement('div', { style: { marginBottom: '12px' } },
+              React.createElement('strong', { style: { fontSize: '16px', color: '#333', display: 'block', marginBottom: '4px' } }, 'Includes Also:'),
+              formatText(item.IncludesAlso)
+            ) : null,
+            item.Excludes ? React.createElement('div', { style: { marginBottom: '12px' } },
+              React.createElement('strong', { style: { fontSize: '16px', color: '#333', display: 'block', marginBottom: '4px' } }, 'Excludes:'),
+              formatText(item.Excludes)
+            ) : null
           )
         ))
-      ) : React.createElement('p', { style: { textAlign: 'center' } }, 'No results found.')
+      ) : React.createElement('p', { style: { textAlign: 'center', fontSize: '16px', color: '#666' } }, 'No results found. Try searching for terms like "wheat", "farming", or specific NACE codes.')
     )
   );
 }
