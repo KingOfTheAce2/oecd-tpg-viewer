@@ -11,7 +11,7 @@ function NACECodeFinder() {
   const [error, setError] = useState(null);
 
   const loadData = (retry = 3) => {
-    const url = 'assets/nace_data.json';
+    const url = 'assets/nace/nace_data.json';
     fetch(url)
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
