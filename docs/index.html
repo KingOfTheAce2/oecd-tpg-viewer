@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>OECD TPG Viewer</title>
+  <title>Document Tools</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    body { text-align: center; }
+    .btn-container { margin-top: 40px; }
+    .app-link { display: inline-block; margin: 10px; padding: 15px 25px; background:#007bff; color:#fff; text-decoration:none; border-radius:4px; }
+  </style>
 </head>
 <body>
-  <div id="root">
-    <h1>OECD TPG Viewer</h1>
-    <input type="text" id="search" placeholder="Search paragraphs..." />
-    <div id="results"></div>
+  <h1>Choose an application</h1>
+  <div class="btn-container">
+    <a class="app-link" href="oecd.html">OECD TPG Viewer</a>
+    <a class="app-link" href="nace.html">NACE Code Finder</a>
   </div>
-
-  <script src="assets/data.js"></script>
-  <script src="assets/index.js"></script>
 </body>
 </html>

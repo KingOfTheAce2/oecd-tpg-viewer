@@ -1,0 +1,23 @@
+[
+  {
+    "CODE": "01.11",
+    "NAME": "Growing of cereals (except rice), leguminous crops and oil seeds",
+    "Includes": "All forms of farmland cropping of cereals, pulses and oilseed plants",
+    "IncludesAlso": "Includes the cultivation of field peas and beans",
+    "Excludes": "Rice cultivation"
+  },
+  {
+    "CODE": "01.21",
+    "NAME": "Growing of grapes",
+    "Includes": "Cultivation of wine or table grapes",
+    "IncludesAlso": "",
+    "Excludes": "Manufacture of wine"
+  },
+  {
+    "CODE": "10.11",
+    "NAME": "Processing and preserving of meat",
+    "Includes": "Operation of slaughterhouses, production of fresh meat",
+    "IncludesAlso": "",
+    "Excludes": "Manufacture of prepared meals"
+  }
+]
