@@ -56,6 +56,9 @@ The repository includes a small Python script that can extract paragraph numbers
 and text from OECD TPG PDF files. Drop PDFs into the `data/` directory and run:
 
 ```bash
+
+pip install -r requirements.txt
+=======
 python scripts/extract_tpg.py
 ```
 

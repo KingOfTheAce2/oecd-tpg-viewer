@@ -17,7 +17,9 @@ jobs:
         with:
           python-version: '3.x'
       - name: Install dependencies
+        run: pip install -r requirements.txt
         run: pip install pdfplumber
+
       - name: Run extractor
         run: python scripts/extract_tpg.py
       - name: Upload artifacts
