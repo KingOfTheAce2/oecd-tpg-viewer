@@ -38,3 +38,17 @@ No build step is required. Open `docs/index.html` in a web browser. From there y
 ## Notes
 
 The data files included in `docs/assets` are provided for convenience and are relatively small in this demo. They can be replaced or updated by editing the corresponding files.
+
+## PDF Extraction
+
+The repository includes a small Python script that can extract paragraph numbers
+and text from OECD TPG PDF files. Drop PDFs into the `data/` directory and run:
+
+```bash
+python scripts/extract_tpg.py
+```
+
+The script outputs JSON files to `output/<year>/` with empty `title` and
+`explanation` fields so they can be filled in manually later. A GitHub Action
+(`.github/workflows/run_extract.yml`) is provided to run the script automatically
+whenever new PDFs are pushed to the `data/` folder.
