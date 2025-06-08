@@ -49,6 +49,7 @@ When using the OECD Transfer Pricing Guidelines data please cite:
 OECD (2022), OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations 2022, OECD Publishing, Paris.
 ```
 
+pip install -r requirements.txt
 =======
 ## PDF Extraction
 
