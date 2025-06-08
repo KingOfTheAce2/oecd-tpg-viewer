@@ -49,13 +49,16 @@ When using the OECD Transfer Pricing Guidelines data please cite:
 OECD (2022), OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations 2022, OECD Publishing, Paris.
 ```
 
+=======
 ## PDF Extraction
 
 The repository includes a small Python script that can extract paragraph numbers
 and text from OECD TPG PDF files. Drop PDFs into the `data/` directory and run:
 
 ```bash
+
 pip install -r requirements.txt
+=======
 python scripts/extract_tpg.py
 ```
 
