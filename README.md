@@ -56,6 +56,7 @@ and text from OECD TPG PDF files. Drop PDFs into the `data/` directory and run:
 
 ```bash
 pip install -r requirements.txt
+
 python scripts/extract_tpg.py
 ```
 
@@ -67,3 +68,4 @@ whenever new PDFs are pushed to the `data/` folder.
 Note: During extraction `pdfplumber` may display warnings like `CropBox missing
 from /Page`; these are harmless. The updated script also joins lines until the
 next paragraph ID so multi-line paragraphs are captured correctly.
+=======
