@@ -3,9 +3,9 @@ name: Extract TPG
 on:
   push:
     paths:
-      - 'data/**.pdf'
+      - 'data/**.docx'
       - '.github/workflows/run_extract.yml'
-      - 'scripts/extract_tpg.py'
+      - 'scripts/extract_docx.py'
 
 jobs:
   build:
@@ -18,10 +18,9 @@ jobs:
           python-version: '3.x'
       - name: Install dependencies
         run: pip install -r requirements.txt
-        run: pip install pdfplumber
 
       - name: Run extractor
-        run: python scripts/extract_tpg.py
+        run: python scripts/extract_docx.py
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
