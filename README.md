@@ -49,23 +49,23 @@ When using the OECD Transfer Pricing Guidelines data please cite:
 OECD (2022), OECD Transfer Pricing Guidelines for Multinational Enterprises and Tax Administrations 2022, OECD Publishing, Paris.
 ```
 
-## PDF Extraction
+## Document Extraction
 
-The repository includes a small Python script that can extract paragraph numbers
-and text from OECD TPG PDF files. Drop PDFs into the `data/` directory and run:
+The repository includes small Python scripts for extracting paragraph numbers
+and text from OECD TPG documents. Drop DOCX files into the `data/` directory and
+run:
 
 ```bash
 pip install -r requirements.txt
 
-python scripts/extract_tpg.py
+python scripts/extract_docx.py
 ```
 
 The script outputs JSON files to `output/<year>/` with empty `title` and
 `explanation` fields so they can be filled in manually later. A GitHub Action
 (`.github/workflows/run_extract.yml`) is provided to run the script automatically
-whenever new PDFs are pushed to the `data/` folder.
+whenever new DOCX files are pushed to the `data/` folder.
 
-Note: During extraction `pdfplumber` may display warnings like `CropBox missing
-from /Page`; these are harmless. The updated script also joins lines until the
-next paragraph ID so multi-line paragraphs are captured correctly.
-=======
+Note: Large DOCX files (the 2022 edition spans 658 pages and millions of words)
+may take a little while to process, but the script streams paragraphs in order
+so memory usage remains modest.
