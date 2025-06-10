@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sankey Diagram Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body id="drop-zone" class="drop-zone page-drop">
+  <div style="text-align:center;margin-bottom:20px;">
+    <a class="app-link" href="index.html">Home</a>
+  </div>
+  <h1 style="text-align:center;">Sankey Diagram Generator</h1>
+  <p>Enter data as <code>source,target,value</code> in the box below or drop a CSV/JSON file anywhere on the page.</p>
+  <p>Example:</p>
+  <pre class="example">Revenue,Cost of Goods Sold,400
+Revenue,Gross Margin,600
+Gross Margin,Operating Expenses,300
+Gross Margin,Gross Profit,300
+Gross Profit,Taxes,100
+Gross Profit,Net Profit,200</pre>
+  <textarea id="data-input" rows="6" placeholder="Enter CSV or JSON data"></textarea>
+  <div style="margin-bottom:10px;">
+    <label>Node Color: <input type="color" id="nodeColor" value="#a6cee3"></label>
+    <label>Link Color: <input type="color" id="linkColor" value="#1f78b4"></label>
+    <label>Font Size: <input type="number" id="fontSize" value="12" style="width:60px;"></label>
+  </div>
+  <button id="render-btn">Render</button>
+  <div id="error" style="color:red;margin-top:10px;"></div>
+  <div id="chart" style="margin-top:20px;"></div>
+  <div style="margin-top:20px;">
+    <button id="export-csv">Export CSV</button>
+    <button id="export-json">Export JSON</button>
+    <button id="export-png">Download PNG</button>
+  </div>
+  <script src="assets/sankey/sankey.js"></script>
+</body>
+</html>
