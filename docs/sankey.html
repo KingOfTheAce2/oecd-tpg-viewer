@@ -12,7 +12,18 @@
     <a class="app-link" href="index.html">Home</a>
   </div>
   <h1 style="text-align:center;">Sankey Diagram Generator</h1>
+  
   <div id="drop-zone" class="drop-zone">Drop CSV or JSON file here</div>
+  
+  <p>Enter data as <code>source,target,value</code> in the box below or drop a CSV/JSON file in the area above.</p>
+  <p>Example:</p>
+  <pre class="example">Revenue,Cost of Goods Sold,400
+Revenue,Gross Margin,600
+Gross Margin,Operating Expenses,300
+Gross Margin,Gross Profit,300
+Gross Profit,Taxes,100
+Gross Profit,Net Profit,200</pre>
+  
   <textarea id="data-input" rows="6" placeholder="Enter CSV or JSON data"></textarea>
   <div style="margin-bottom:10px;">
     <label>Node Color: <input type="color" id="nodeColor" value="#a6cee3"></label>
