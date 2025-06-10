@@ -19,10 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // sample data shown on load
   const defaultData = [
-    { source: 'A', target: 'B', value: 5 },
-    { source: 'A', target: 'C', value: 3 },
-    { source: 'B', target: 'D', value: 2 },
-    { source: 'C', target: 'D', value: 6 }
+    { source: 'Revenue', target: 'Cost of Goods Sold', value: 400 },
+    { source: 'Revenue', target: 'Gross Margin', value: 600 },
+    { source: 'Gross Margin', target: 'Operating Expenses', value: 300 },
+    { source: 'Gross Margin', target: 'Gross Profit', value: 300 },
+    { source: 'Gross Profit', target: 'Taxes', value: 100 },
+    { source: 'Gross Profit', target: 'Net Profit', value: 200 }
   ];
 
   // helpers
